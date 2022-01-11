@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "color-app"
+    }
+  },
+  "defaultProject": "color-app",
+  "cli": {
+    "analytics": false
+  }
 }
