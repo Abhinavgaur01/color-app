@@ -1,1 +1,30 @@
-<h1>app</h1>
+<div class="container p-3">
+  <div class="header text-center">
+    <div class="input-group mb-3">
+
+      <input type="text"
+      class="form-control"
+      placeholder="Search by color name"
+      name="search"
+      [(ngModel)]="searchText"
+    (ngModelChange)="onSearch(searchText)">
+
+      <div class="input-group-append">
+        <span class="input-group-text cursor-pointer">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+ <div class="grid">
+   <div class="grid-item" *ngFor="let item of colorList; let index= index" [ngStyle]="{'background': item.hex}">
+     <h5>{{item.name}}</h5>
+     <p>Hex code: {{item.hex}}</p>
+   </div>
+
+ </div>
+
+ <div class="d-flex">
+    <h1 class="border shadow" *ngIf="isNoResultFound">No Result Found</h1>
+ </div>
+</div>
